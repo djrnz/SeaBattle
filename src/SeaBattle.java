@@ -17,7 +17,7 @@ public class SeaBattle {
             System.out.print(cell);
         }*/
 //test
-
+// test 2
             do {
                 System.out.println(cells);
                 Scanner scanner = new Scanner(System.in);
