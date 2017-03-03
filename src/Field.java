@@ -2,9 +2,10 @@
  * Created by E&K PC on 3/3/2017.
  */
 public class Field {
-    final int SIZE = 10;
+    static final int SIZE = 20;
+    public static final int SHIPS_AMOUNT = 4;
     char[] cells = new char[SIZE];
-    Ship ship;
+    Ship[] ships = new Ship[SHIPS_AMOUNT];
 
     void init() {
         for (int i = 0; i < cells.length; i++) {
@@ -13,8 +14,23 @@ public class Field {
     }
 
     void setShip(Ship ship) {
-        this.ship = ship;
-        cells[ship.position] = 'X';
+        for (int i = 0; i < SHIPS_AMOUNT; i++) {
+            Ship tempShip = new Ship();
+
+            drawShip(tempShip);
+
+            ships[i] = tempShip;
+        }
+
+        /* this.ship = ship;
+        cells[ship.position] = 'X';*/
+    }
+
+    private void drawShip(Ship tempShip) {
+        for (int i = 0; i < tempShip.size; i++) {
+            cells[tempShip.positionSart + i] = 'X';
+
+        }
     }
 
     void doShoot(int shoot) {
@@ -24,9 +40,9 @@ public class Field {
                 cells[shoot] = '*';
                 break;
             case 'X':
-                System.out.println("Супер! Корабль потоплен!");
+                System.out.println("Супер! Корабль потоплен или ранен!");
                 cells[shoot] = '-';
-                System.out.println(cells);
+                show();
                 break;
             case '*':
                 System.out.println("Уже стреляли!");
