@@ -16,6 +16,7 @@ public class SeaBattle {
 /*        for (char cell : cells) {
             System.out.print(cell);
         }*/
+//test
 
             do {
                 System.out.println(cells);
