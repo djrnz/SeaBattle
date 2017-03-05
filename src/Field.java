@@ -2,7 +2,7 @@
  * Created by E&K PC on 3/3/2017.
  */
 public class Field {
-    static final int SIZE = 10;
+    final int SIZE = 10;
     char[] cells = new char[SIZE];
     Ship ship;
 
