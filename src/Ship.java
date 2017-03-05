@@ -37,5 +37,4 @@ void initWithRandomPositionAndSize() {
         return true;
     }
 
-
 }
